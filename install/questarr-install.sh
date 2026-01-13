@@ -21,6 +21,10 @@ $STD apt install -y \
   python3
 msg_ok "Installed Dependencies"
 
+msg_info "Creating Questarr user"
+useradd -m -s /usr/sbin/nologin questarr || true
+msg_ok "Questarr user created"
+
 NODE_VERSION="20" setup_nodejs
 PG_VERSION="16" setup_postgresql
 export PG_DB_NAME="questarr"
@@ -37,6 +41,8 @@ msg_ok "Cloned Questarr"
 msg_info "Installing Questarr Dependencies"
 $STD npm ci
 msg_ok "Installed Dependencies"
+
+chown -R questarr:questarr /opt/questarr
 
 msg_info "Configuring Questarr"
 cat <<EOF >/opt/questarr/.env
@@ -90,8 +96,8 @@ Wants=postgresql.service
 
 [Service]
 Type=simple
-User=root
-Group=root
+User=questarr
+Group=questarr
 WorkingDirectory=/opt/questarr
 Environment=NODE_ENV=production
 EnvironmentFile=/opt/questarr/.env
@@ -127,7 +133,7 @@ echo " \__\_\\\\__,_|\___||___/\__\__,_|_|  |_|   "
 echo ""
 echo "Questarr - Video Game Collection Manager"
 echo "----------------------------------------"
-echo "Web Interface: http://${LOCAL_IP}:5000"
+echo "Web Interface: http://${IP}:5000"
 echo ""
 echo "Configuration:"
 echo "  Config file: /opt/questarr/.env"

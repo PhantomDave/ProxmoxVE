@@ -1,0 +1,38 @@
+{
+  "name": "Questarr",
+  "slug": "questarr",
+  "categories": [
+    14
+  ],
+  "date_created": "2026-01-13",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 5000,
+  "documentation": "https://github.com/Doezer/Questarr",
+  "website": "https://github.com/Doezer/Questarr",
+  "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/game-controller.webp",
+  "config_path": "/opt/questarr",
+  "description": "Questarr is a video game collection manager designed to help users organize and track their personal gaming library. It provides a web-based interface for managing game collections with support for metadata, cover art, and detailed game information. Questarr integrates with game databases and APIs to automatically populate information about games, making it easy to maintain an organized and comprehensive gaming collection.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/questarr.sh",
+      "resources": {
+        "cpu": 2,
+        "ram": 2048,
+        "hdd": 8,
+        "os": "debian",
+        "version": "13"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    "Configure IGDB API credentials in /opt/questarr/.env after installation",
+    "Get API credentials at: https://dev.twitch.tv/console"
+  ]
+}
