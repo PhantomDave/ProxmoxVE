@@ -414,5 +414,5 @@ function update_script() {
 ---
 
 **Last Updated**: December 2025
-**Maintainers**: community-scripts team
+**Maintainers**: PhantomDave team
 **Integration Status**: All components fully integrated

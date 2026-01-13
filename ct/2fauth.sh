@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
-# Copyright (c) 2021-2026 community-scripts ORG
+source <(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/misc/build.func)
+# Copyright (c) 2021-2026 PhantomDave ORG
 # Author: jkrgr0
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
 # Source: https://docs.2fauth.app/
 
 APP="2FAuth"

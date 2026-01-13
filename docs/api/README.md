@@ -101,7 +101,7 @@ Installation Scripts
     │
     ├─ Call: api.func functions
     │
-    └─ POST to: https://api.community-scripts.org
+    └─ POST to: https://api.PhantomDave.org
                 │
                 ├─ Receives data
                 ├─ Validates format
@@ -119,8 +119,8 @@ Installation Scripts
 
 - **Enable API reporting** → Built-in by default, no configuration needed
 - **Disable API** → Set `api_disable="yes"` before running
-- **View API data** → Visit https://community-scripts.org/stats
-- **Report API errors** → [GitHub Issues](https://github.com/community-scripts/ProxmoxVE/issues)
+- **View API data** → Visit https://PhantomDave.org/stats
+- **Report API errors** → [GitHub Issues](https://github.com/PhantomDave/ProxmoxVE/issues)
 
 ## Debugging API Issues
 
@@ -133,7 +133,7 @@ If API calls fail:
 
 ## API Endpoint
 
-**Base URL**: `https://api.community-scripts.org`
+**Base URL**: `https://api.PhantomDave.org`
 
 **Endpoints**:
 - `POST /install` - Report container installation
@@ -143,4 +143,4 @@ If API calls fail:
 ---
 
 **Last Updated**: December 2025
-**Maintainers**: community-scripts team
+**Maintainers**: PhantomDave team

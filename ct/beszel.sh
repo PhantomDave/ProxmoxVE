@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
-# Copyright (c) community-scripts ORG
+source <(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/misc/build.func)
+# Copyright (c) PhantomDave ORG
 # Author: Michelle Zitzerman (Sinofage)
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
 # Source: https://beszel.dev/
 
 APP="Beszel"

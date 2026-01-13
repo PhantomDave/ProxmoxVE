@@ -142,16 +142,16 @@ msg_ok "Completed successfully!\n"
 
 ```bash
 #!/usr/bin/env bash
-# Copyright (c) 2021-2026 community-scripts ORG
+# Copyright (c) 2021-2026 PhantomDave ORG
 # Author: YourUsername
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/example/project
 
 # Import main orchestrator
-source <(curl -fsSL https://git.community-scripts.org/community-scripts/ProxmoxVE/raw/branch/main/misc/build.func)
+source <(curl -fsSL https://git.PhantomDave.org/PhantomDave/ProxmoxVE/raw/branch/main/misc/build.func)
 ```
 
-> **⚠️ IMPORTANT**: Before opening a PR, change URL to `community-scripts` repo!
+> **⚠️ IMPORTANT**: Before opening a PR, change URL to `PhantomDave` repo!
 
 ### 2. Application Metadata
 
@@ -287,7 +287,7 @@ echo -e "${TAB}${GATEWAY}${BGN}http://${IP}:8080${CL}"
 ```
 1. Default Installation (Quick setup, predefined settings)
 2. Advanced Installation (19-step wizard with full control)
-3. User Defaults (Load ~/.community-scripts/default.vars)
+3. User Defaults (Load ~/.PhantomDave/default.vars)
 4. App Defaults (Load /defaults/AppName.vars)
 5. Settings Menu (Interactive mode selection)
 ```
@@ -363,7 +363,7 @@ function health_check() {
 
 ```bash
 #!/usr/bin/env bash
-source <(curl -fsSL https://git.community-scripts.org/community-scripts/ProxmoxVE/raw/branch/main/misc/build.func)
+source <(curl -fsSL https://git.PhantomDave.org/PhantomDave/ProxmoxVE/raw/branch/main/misc/build.func)
 
 APP="Homarr"
 var_tags="dashboard;homepage"
@@ -427,7 +427,7 @@ Before submitting a PR:
 
 ### Script Structure
 - [ ] Shebang is `#!/usr/bin/env bash`
-- [ ] Imports `build.func` from community-scripts repo
+- [ ] Imports `build.func` from PhantomDave repo
 - [ ] Copyright header with author and source URL
 - [ ] APP variable matches filename
 - [ ] `var_tags` are semicolon-separated (no spaces)

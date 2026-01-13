@@ -1,6 +1,6 @@
 # Configuration Reference
 
-**Complete reference for all configuration variables and options in community-scripts for Proxmox VE.**
+**Complete reference for all configuration variables and options in PhantomDave for Proxmox VE.**
 
 ---
 

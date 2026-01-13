@@ -2,11 +2,11 @@
 
 ## Overview
 
-The `api.func` file provides Proxmox API integration and diagnostic reporting functionality for the Community Scripts project. It handles API communication, error reporting, and status updates to the community-scripts.org API.
+The `api.func` file provides Proxmox API integration and diagnostic reporting functionality for the Community Scripts project. It handles API communication, error reporting, and status updates to the PhantomDave.org API.
 
 ## Purpose and Use Cases
 
-- **API Communication**: Send installation and status data to community-scripts.org API
+- **API Communication**: Send installation and status data to PhantomDave.org API
 - **Diagnostic Reporting**: Report installation progress and errors for analytics
 - **Error Description**: Provide detailed error code explanations
 - **Status Updates**: Track installation success/failure status

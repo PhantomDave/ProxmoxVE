@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Copyright (c) 2021-2026 community-scripts ORG
+# Copyright (c) 2021-2026 PhantomDave ORG
 # Author: bvdberg01 | CanbiZ
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/karlomikus/bar-assistant
 # Source: https://github.com/karlomikus/vue-salt-rim
 # Source: https://www.meilisearch.com/

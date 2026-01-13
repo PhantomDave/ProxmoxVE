@@ -269,5 +269,5 @@ netplan apply                      → Configure directly in interfaces
 ---
 
 **Last Updated**: December 2025
-**Maintainers**: community-scripts team
+**Maintainers**: PhantomDave team
 **License**: MIT

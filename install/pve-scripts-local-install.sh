@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Copyright (c) 2021-2026 community-scripts ORG
+# Copyright (c) 2021-2026 PhantomDave ORG
 # Author: michelroegl-brunner
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
@@ -21,7 +21,7 @@ $STD apt install -y \
 msg_ok "Dependencies installed."
 
 NODE_VERSION=24 setup_nodejs
-fetch_and_deploy_gh_release "ProxmoxVE-Local" "community-scripts/ProxmoxVE-Local" "tarball"
+fetch_and_deploy_gh_release "ProxmoxVE-Local" "PhantomDave/ProxmoxVE-Local" "tarball"
 
 msg_info "Installing PVE Scripts local"
 cd /opt/ProxmoxVE-Local

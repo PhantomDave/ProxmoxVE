@@ -98,7 +98,7 @@ The script updates these documentation files:
 ### Keep Your Fork Updated
 ```bash
 # Add upstream if you haven't already
-git remote add upstream https://github.com/community-scripts/ProxmoxVE.git
+git remote add upstream https://github.com/PhantomDave/ProxmoxVE.git
 
 # Get latest from upstream
 git fetch upstream
@@ -138,7 +138,7 @@ bash setup-fork.sh
 ```bash
 # Your git origin URL isn't set up correctly
 git remote -v
-# Should show your fork URL, not community-scripts
+# Should show your fork URL, not PhantomDave
 
 # Fix it:
 git remote set-url origin https://github.com/YOUR_USERNAME/ProxmoxVE.git

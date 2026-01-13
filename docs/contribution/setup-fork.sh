@@ -105,7 +105,7 @@ confirm() {
 
 # Update links in files
 update_links() {
-    local old_repo="community-scripts"
+    local old_repo="PhantomDave"
     local old_name="ProxmoxVE"
     local new_owner="$1"
     local new_repo="$2"
@@ -166,15 +166,15 @@ create_git_setup_info() {
 git remote -v
 
 # If you don't have 'upstream' configured, add it:
-git remote add upstream https://github.com/community-scripts/ProxmoxVE.git
+git remote add upstream https://github.com/PhantomDave/ProxmoxVE.git
 
 # Verify both remotes exist:
 git remote -v
 # Should show:
 # origin     https://github.com/YOUR_USERNAME/ProxmoxVE.git (fetch)
 # origin     https://github.com/YOUR_USERNAME/ProxmoxVE.git (push)
-# upstream   https://github.com/community-scripts/ProxmoxVE.git (fetch)
-# upstream   https://github.com/community-scripts/ProxmoxVE.git (push)
+# upstream   https://github.com/PhantomDave/ProxmoxVE.git (fetch)
+# upstream   https://github.com/PhantomDave/ProxmoxVE.git (push)
 ```
 
 ### Configure Git User (if not done globally)
@@ -300,7 +300,7 @@ echo ""
 
 print_success "All documentation links updated to point to your fork"
 print_info "Your fork: https://github.com/$USERNAME/$REPO_NAME"
-print_info "Upstream: https://github.com/community-scripts/ProxmoxVE"
+print_info "Upstream: https://github.com/PhantomDave/ProxmoxVE"
 echo ""
 
 echo -e "${BLUE}Next Steps:${NC}"

@@ -123,7 +123,7 @@ var_gpu=no bash -c "$(curl -fsSL https://...jellyfin.sh)"
 var_gpu=yes bash -c "$(curl -fsSL https://...debian.sh)"
 
 # Set in default.vars for all apps
-echo "var_gpu=yes" >> /usr/local/community-scripts/default.vars
+echo "var_gpu=yes" >> /usr/local/PhantomDave/default.vars
 ```
 
 ### API and Diagnostics Variables
@@ -142,16 +142,16 @@ echo "var_gpu=yes" >> /usr/local/community-scripts/default.vars
 | ------------------- | -------------------------- | ------------------------------------------------- | ----------- | -------------------- |
 | `SAVE_DEFAULTS`     | Save settings as defaults  | "false"                                           | User input  | Settings persistence |
 | `SAVE_APP_DEFAULTS` | Save app-specific defaults | "false"                                           | User input  | Settings persistence |
-| `DEFAULT_VARS_FILE` | Path to default.vars       | "/usr/local/community-scripts/default.vars"       | Environment | Settings persistence |
-| `APP_DEFAULTS_FILE` | Path to app.vars           | "/usr/local/community-scripts/defaults/$APP.vars" | Environment | Settings persistence |
+| `DEFAULT_VARS_FILE` | Path to default.vars       | "/usr/local/PhantomDave/default.vars"       | Environment | Settings persistence |
+| `APP_DEFAULTS_FILE` | Path to app.vars           | "/usr/local/PhantomDave/defaults/$APP.vars" | Environment | Settings persistence |
 
 ## Variable Precedence Chain
 
 Variables are resolved in the following order (highest to lowest priority):
 
 1. **Hard Environment Variables**: Set before script execution
-2. **App-specific .vars file**: `/usr/local/community-scripts/defaults/<app>.vars`
-3. **Global default.vars file**: `/usr/local/community-scripts/default.vars`
+2. **App-specific .vars file**: `/usr/local/PhantomDave/defaults/<app>.vars`
+3. **Global default.vars file**: `/usr/local/PhantomDave/default.vars`
 4. **Built-in defaults**: Set in `base_settings()` function
 
 ## Critical Variables for Non-Interactive Use

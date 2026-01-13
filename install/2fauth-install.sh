@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Copyright (c) 2021-2026 community-scripts ORG
+# Copyright (c) 2021-2026 PhantomDave ORG
 # Author: jkrgr0
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
 # Source: https://docs.2fauth.app/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"

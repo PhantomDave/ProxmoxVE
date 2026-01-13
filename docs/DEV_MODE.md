@@ -7,16 +7,16 @@ Development modes provide powerful debugging and testing capabilities for contai
 ```bash
 # Single mode
 export dev_mode="motd"
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/wallabag.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/ct/wallabag.sh)"
 
 # Multiple modes (comma-separated)
 export dev_mode="motd,keep,trace"
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/wallabag.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/ct/wallabag.sh)"
 
 # Combine with verbose output
 export var_verbose="yes"
 export dev_mode="pause,logs"
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/wallabag.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/ct/wallabag.sh)"
 ```
 
 ## Available Modes
@@ -170,7 +170,7 @@ Container 107 still running. Remove now? (y/N): n
 
 ### 6. **logs** - Persistent Logging
 
-Saves all logs to `/var/log/community-scripts/` with timestamps. Logs persist even on successful installation.
+Saves all logs to `/var/log/PhantomDave/` with timestamps. Logs persist even on successful installation.
 
 **Use Case**:
 
@@ -182,7 +182,7 @@ Saves all logs to `/var/log/community-scripts/` with timestamps. Logs persist ev
 **Behavior**:
 
 ```
-Logs location: /var/log/community-scripts/
+Logs location: /var/log/PhantomDave/
 
 create-lxc-abc12345-20251117_143022.log    (host-side creation)
 install-abc12345-20251117_143022.log       (container-side installation)
@@ -192,19 +192,19 @@ install-abc12345-20251117_143022.log       (container-side installation)
 
 ```bash
 # View creation log
-tail -f /var/log/community-scripts/create-lxc-*.log
+tail -f /var/log/PhantomDave/create-lxc-*.log
 
 # Search for errors
-grep ERROR /var/log/community-scripts/*.log
+grep ERROR /var/log/PhantomDave/*.log
 
 # Analyze performance
-grep "msg_info\|msg_ok" /var/log/community-scripts/create-*.log
+grep "msg_info\|msg_ok" /var/log/PhantomDave/create-*.log
 ```
 
 **With trace mode**: Creates detailed trace of all commands
 
 ```bash
-grep "^+" /var/log/community-scripts/install-*.log
+grep "^+" /var/log/PhantomDave/install-*.log
 ```
 
 **Combined with**: All other modes (recommended for CI/CD)
@@ -265,7 +265,7 @@ export var_verbose="yes"
 bash -c "$(curl ...)"
 
 # Capture logs for analysis
-tar czf installation-logs-$(date +%s).tar.gz /var/log/community-scripts/
+tar czf installation-logs-$(date +%s).tar.gz /var/log/PhantomDave/
 ```
 
 ### Production-like Testing
@@ -388,20 +388,20 @@ exit
 
 ### With `logs` mode
 
-- Host creation: `/var/log/community-scripts/create-lxc-<SESSION_ID>-<TIMESTAMP>.log`
-- Container install: `/var/log/community-scripts/install-<SESSION_ID>-<TIMESTAMP>.log`
+- Host creation: `/var/log/PhantomDave/create-lxc-<SESSION_ID>-<TIMESTAMP>.log`
+- Container install: `/var/log/PhantomDave/install-<SESSION_ID>-<TIMESTAMP>.log`
 
 ### View logs
 
 ```bash
 # Tail in real-time
-tail -f /var/log/community-scripts/*.log
+tail -f /var/log/PhantomDave/*.log
 
 # Search for errors
-grep -r "exit code [1-9]" /var/log/community-scripts/
+grep -r "exit code [1-9]" /var/log/PhantomDave/
 
 # Filter by session
-grep "ed563b19" /var/log/community-scripts/*.log
+grep "ed563b19" /var/log/PhantomDave/*.log
 ```
 
 ---
@@ -434,10 +434,10 @@ grep "ed563b19" /var/log/community-scripts/*.log
 ```bash
 # Initial test to see the failure
 export dev_mode="keep,logs"
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/wallabag.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/ct/wallabag.sh)"
 
 # Container 107 kept, check logs
-tail /var/log/community-scripts/install-*.log
+tail /var/log/PhantomDave/install-*.log
 
 # SSH in to debug
 pct enter 107
@@ -474,14 +474,14 @@ for app in wallabag nextcloud wordpress; do
   echo "Testing $app installation..."
   APP="$app" bash -c "$(curl ...)" || {
     echo "FAILED: $app"
-    tar czf logs-$app.tar.gz /var/log/community-scripts/
+    tar czf logs-$app.tar.gz /var/log/PhantomDave/
     exit 1
   }
   echo "SUCCESS: $app"
 done
 
 echo "All installations successful"
-tar czf all-logs.tar.gz /var/log/community-scripts/
+tar czf all-logs.tar.gz /var/log/PhantomDave/
 ```
 
 ---
@@ -492,13 +492,13 @@ tar czf all-logs.tar.gz /var/log/community-scripts/
 
 ```bash
 # Extract all errors
-grep "ERROR\|exit code [1-9]" /var/log/community-scripts/*.log
+grep "ERROR\|exit code [1-9]" /var/log/PhantomDave/*.log
 
 # Performance timeline
-grep "^$(date +%Y-%m-%d)" /var/log/community-scripts/*.log | grep "msg_"
+grep "^$(date +%Y-%m-%d)" /var/log/PhantomDave/*.log | grep "msg_"
 
 # Memory usage during install
-grep "free\|available" /var/log/community-scripts/*.log
+grep "free\|available" /var/log/PhantomDave/*.log
 ```
 
 ### Integration with External Tools
@@ -507,11 +507,11 @@ grep "free\|available" /var/log/community-scripts/*.log
 # Send logs to Elasticsearch
 curl -X POST "localhost:9200/installation-logs/_doc" \
   -H 'Content-Type: application/json' \
-  -d @/var/log/community-scripts/install-*.log
+  -d @/var/log/PhantomDave/install-*.log
 
 # Archive for compliance
 tar czf installation-records-$(date +%Y%m).tar.gz \
-  /var/log/community-scripts/
+  /var/log/PhantomDave/
 gpg --encrypt installation-records-*.tar.gz
 ```
 
@@ -526,7 +526,7 @@ When reporting installation issues, always include:
 export dev_mode="logs"
 # Run the failing installation
 # Then provide:
-tar czf debug-logs.tar.gz /var/log/community-scripts/
+tar czf debug-logs.tar.gz /var/log/PhantomDave/
 ```
 
 Include the `debug-logs.tar.gz` when reporting issues for better diagnostics.

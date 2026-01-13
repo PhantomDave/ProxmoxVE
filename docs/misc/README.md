@@ -274,7 +274,7 @@ All documentation follows these standards:
 ---
 
 ## ✅ **Last Updated**: December 2025
-**Maintainers**: community-scripts team
+**Maintainers**: PhantomDave team
 **License**: MIT
 **Status**: All 9 libraries fully documented and standardized
 

@@ -27,7 +27,7 @@ Security vulnerabilities must not be reported publicly to avoid potential exploi
 Instead, please report them privately via one of the following channels:
 
 - **Discord**: Join our [Discord server](https://discord.gg/jsYVk5JBxq) and send a direct message to a maintainer.  
-- **Email**: Write to us at **contact@community-scripts.org** with the subject line:  
+- **Email**: Write to us at **contact@PhantomDave.org** with the subject line:  
   `Vulnerability Report - <Project/Script Name>`.
 
 When reporting a vulnerability, please provide:

@@ -51,8 +51,8 @@ fi
 source api.func
 
 # Create diagnostics file for VM
-mkdir -p /usr/local/community-scripts
-echo "DIAGNOSTICS=yes" > /usr/local/community-scripts/diagnostics
+mkdir -p /usr/local/PhantomDave
+echo "DIAGNOSTICS=yes" > /usr/local/PhantomDave/diagnostics
 
 # Set up VM parameters
 export RANDOM_UUID="$(uuidgen)"
@@ -201,8 +201,8 @@ install_vm_with_reporting() {
     local vmid="$2"
 
     # Create diagnostics file
-    mkdir -p /usr/local/community-scripts
-    echo "DIAGNOSTICS=yes" > /usr/local/community-scripts/diagnostics
+    mkdir -p /usr/local/PhantomDave
+    echo "DIAGNOSTICS=yes" > /usr/local/PhantomDave/diagnostics
 
     # Set up API reporting
     export RANDOM_UUID="$(uuidgen)"
@@ -461,7 +461,7 @@ check_api_health() {
     echo "Error description test: $test_error"
 
     # Test API connectivity (without sending data)
-    local api_url="http://api.community-scripts.org/dev/upload"
+    local api_url="http://api.PhantomDave.org/dev/upload"
     if curl -s --head "$api_url" >/dev/null 2>&1; then
         echo "API endpoint is reachable"
     else
@@ -541,8 +541,8 @@ source api.func
 source vm-core.func
 
 # Set up VM API reporting
-mkdir -p /usr/local/community-scripts
-echo "DIAGNOSTICS=yes" > /usr/local/community-scripts/diagnostics
+mkdir -p /usr/local/PhantomDave
+echo "DIAGNOSTICS=yes" > /usr/local/PhantomDave/diagnostics
 
 export RANDOM_UUID="$(uuidgen)"
 

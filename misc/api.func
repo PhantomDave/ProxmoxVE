@@ -1,12 +1,12 @@
-# Copyright (c) 2021-2026 community-scripts ORG
+# Copyright (c) 2021-2026 PhantomDave ORG
 # Author: michelroegl-brunner
-# License: MIT | https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/LICENSE
+# License: MIT | https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/LICENSE
 
 # ==============================================================================
 # API.FUNC - TELEMETRY & DIAGNOSTICS API
 # ==============================================================================
 #
-# Provides functions for sending anonymous telemetry data to Community-Scripts
+# Provides functions for sending anonymous telemetry data to PhantomDave
 # API for analytics and diagnostics purposes.
 #
 # Features:
@@ -119,7 +119,7 @@ explain_exit_code() {
   222) echo "Custom: Template download failed after 3 attempts (network/storage issue)" ;;
   223) echo "Custom: Template not available after download (storage sync issue)" ;;
   225) echo "Custom: No template available for OS/Version (check 'pveam available')" ;;
-  231) echo "Custom: LXC stack upgrade/retry failed (outdated pve-container - check https://github.com/community-scripts/ProxmoxVE/discussions/8126)" ;;
+  231) echo "Custom: LXC stack upgrade/retry failed (outdated pve-container - check https://github.com/PhantomDave/ProxmoxVE/discussions/8126)" ;;
 
   # --- Default ---
   *) echo "Unknown error" ;;
@@ -133,7 +133,7 @@ explain_exit_code() {
 # ------------------------------------------------------------------------------
 # post_to_api()
 #
-# - Sends LXC container creation statistics to Community-Scripts API
+# - Sends LXC container creation statistics to PhantomDave API
 # - Only executes if:
 #   * curl is available
 #   * DIAGNOSTICS=yes
@@ -163,7 +163,7 @@ post_to_api() {
     return
   fi
 
-  local API_URL="http://api.community-scripts.org/upload"
+  local API_URL="http://api.PhantomDave.org/upload"
   local pve_version="not found"
   pve_version=$(pveversion | awk -F'[/ ]' '{print $2}')
 
@@ -196,9 +196,9 @@ EOF
 # ------------------------------------------------------------------------------
 # post_to_api_vm()
 #
-# - Sends VM creation statistics to Community-Scripts API
+# - Sends VM creation statistics to PhantomDave API
 # - Similar to post_to_api() but for virtual machines (not containers)
-# - Reads DIAGNOSTICS from /usr/local/community-scripts/diagnostics file
+# - Reads DIAGNOSTICS from /usr/local/PhantomDave/diagnostics file
 # - Payload differences:
 #   * ct_type=2 (VM instead of LXC)
 #   * type="vm"
@@ -207,10 +207,10 @@ EOF
 # ------------------------------------------------------------------------------
 post_to_api_vm() {
 
-  if [[ ! -f /usr/local/community-scripts/diagnostics ]]; then
+  if [[ ! -f /usr/local/PhantomDave/diagnostics ]]; then
     return
   fi
-  DIAGNOSTICS=$(grep -i "^DIAGNOSTICS=" /usr/local/community-scripts/diagnostics | awk -F'=' '{print $2}')
+  DIAGNOSTICS=$(grep -i "^DIAGNOSTICS=" /usr/local/PhantomDave/diagnostics | awk -F'=' '{print $2}')
   if ! command -v curl &>/dev/null; then
     return
   fi
@@ -223,7 +223,7 @@ post_to_api_vm() {
     return
   fi
 
-  local API_URL="http://api.community-scripts.org/upload"
+  local API_URL="http://api.PhantomDave.org/upload"
   local pve_version="not found"
   pve_version=$(pveversion | awk -F'[/ ]' '{print $2}')
 
@@ -285,7 +285,7 @@ post_update_to_api() {
     return 0
   fi
   exit_code=${2:-1}
-  local API_URL="http://api.community-scripts.org/upload/updatestatus"
+  local API_URL="http://api.PhantomDave.org/upload/updatestatus"
   local status="${1:-failed}"
   if [[ "$status" == "failed" ]]; then
     local exit_code="${2:-1}"

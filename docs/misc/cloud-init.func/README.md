@@ -335,5 +335,5 @@ apt-get update && apt-get install -y package-name
 ---
 
 **Last Updated**: December 2025
-**Maintainers**: community-scripts team
+**Maintainers**: PhantomDave team
 **License**: MIT

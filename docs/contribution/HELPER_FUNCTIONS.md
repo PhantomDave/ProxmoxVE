@@ -507,9 +507,9 @@ prepare_repository_setup "mariadb" "mysql"
 ```bash
 #!/usr/bin/env bash
 
-# Copyright (c) 2021-2026 community-scripts ORG
+# Copyright (c) 2021-2026 PhantomDave ORG
 # Author: YourUsername
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/example/myapp
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -573,10 +573,10 @@ cleanup_lxc
 
 ```bash
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
-# Copyright (c) 2021-2026 community-scripts ORG
+source <(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/misc/build.func)
+# Copyright (c) 2021-2026 PhantomDave ORG
 # Author: YourUsername
-# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/example/myapp
 
 APP="MyApp"
