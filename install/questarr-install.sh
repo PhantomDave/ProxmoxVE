@@ -23,7 +23,9 @@ msg_ok "Installed Dependencies"
 
 NODE_VERSION="20" setup_nodejs
 PG_VERSION="16" setup_postgresql
-PG_DB_NAME="questarr" PG_DB_USER="questarr_user" setup_postgresql_db
+export PG_DB_NAME="questarr"
+export PG_DB_USER="questarr_user"
+setup_postgresql_db
 import_local_ip
 
 msg_info "Cloning Questarr Repository"
