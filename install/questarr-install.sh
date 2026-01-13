@@ -77,6 +77,7 @@ $STD npm run build
 msg_ok "Built Questarr"
 
 msg_info "Running Database Migrations"
+export DATABASE_URL="postgresql://${PG_DB_USER}:${PG_DB_PASS}@localhost:5432/${PG_DB_NAME}"
 $STD npm run db:migrate
 msg_ok "Database Migrations Complete"
 
