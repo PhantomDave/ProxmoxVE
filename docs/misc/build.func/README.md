@@ -130,8 +130,8 @@ Practical usage examples covering common scenarios, CLI examples, and environmen
 ### Variable Precedence
 Variables are resolved in this order (highest to lowest priority):
 1. Hard environment variables (set before script execution)
-2. App-specific .vars file (`/usr/local/PhantomDave/defaults/<app>.vars`)
-3. Global default.vars file (`/usr/local/PhantomDave/default.vars`)
+2. App-specific .vars file (`/usr/local/community-scripts/defaults/<app>.vars`)
+3. Global default.vars file (`/usr/local/community-scripts/default.vars`)
 4. Built-in defaults (set in `base_settings()` function)
 
 ### Installation Modes

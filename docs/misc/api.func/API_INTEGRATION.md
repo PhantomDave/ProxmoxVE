@@ -87,8 +87,8 @@ source api.func
 source vm-core.func
 
 # Set up VM API reporting
-mkdir -p /usr/local/PhantomDave
-echo "DIAGNOSTICS=yes" > /usr/local/PhantomDave/diagnostics
+mkdir -p /usr/local/community-scripts
+echo "DIAGNOSTICS=yes" > /usr/local/community-scripts/diagnostics
 
 export RANDOM_UUID="$(uuidgen)"
 
@@ -407,7 +407,7 @@ run_maintenance_with_reporting() {
 ### Output Data
 
 #### API Communication
-- **HTTP requests**: Sent to PhantomDave.org API
+- **HTTP requests**: Sent to community-scripts.org API
 - **Response codes**: Captured from API responses
 - **Error information**: Reported to API
 - **Status updates**: Sent to API
@@ -566,7 +566,7 @@ post_update_to_api "success" 0
 
 ### Automatic Error Reporting
 - **Error Descriptions**: Provides human-readable error messages
-- **API Integration**: Reports errors to PhantomDave.org API
+- **API Integration**: Reports errors to community-scripts.org API
 - **Error Tracking**: Tracks error patterns for project improvement
 - **Diagnostic Data**: Contributes to anonymous usage analytics
 

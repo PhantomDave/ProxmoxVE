@@ -157,8 +157,8 @@ App Defaults Flow:
 ### Precedence Order (Highest to Lowest)
 
 1. **Hard Environment Variables**: Set before script execution
-2. **App-specific .vars file**: `/usr/local/PhantomDave/defaults/<app>.vars`
-3. **Global default.vars file**: `/usr/local/PhantomDave/default.vars`
+2. **App-specific .vars file**: `/usr/local/community-scripts/defaults/<app>.vars`
+3. **Global default.vars file**: `/usr/local/community-scripts/default.vars`
 4. **Built-in defaults**: Set in `base_settings()` function
 
 ### Variable Resolution Process

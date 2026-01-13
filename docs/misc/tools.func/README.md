@@ -230,5 +230,5 @@ When adding new tool installation functions:
 ---
 
 **Last Updated**: December 2025
-**Maintainers**: PhantomDave team
+**Maintainers**: community-scripts team
 **License**: MIT

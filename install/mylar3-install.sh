@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Copyright (c) 2021-2026 PhantomDave ORG
+# Copyright (c) 2021-2026 community-scripts ORG
 # Author: davalanche | Co-Author: Slaviša Arežina (tremor021)
-# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/mylar3/mylar3
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"

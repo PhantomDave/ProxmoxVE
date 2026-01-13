@@ -52,11 +52,11 @@ source <(curl -fsSL https://raw.githubusercontent.com/[USER]/[REPO]/refs/heads/[
 Final script:
 
 ```bash
-source <(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 ```
 
 > [!CAUTION]
-> Before opening a Pull Request, change the URLs to point to the PhantomDave repo.
+> Before opening a Pull Request, change the URLs to point to the community-scripts repo.
 
 ### 1.3 **Metadata**
 
@@ -65,9 +65,9 @@ source <(curl -fsSL https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main
 Example:
 
 ```bash
-# Copyright (c) 2021-2026 PhantomDave ORG
+# Copyright (c) 2021-2026 community-scripts ORG
 # Author: [YourUserName]
-# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: [SOURCE_URL]
 ```
 

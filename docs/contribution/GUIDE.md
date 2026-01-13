@@ -30,7 +30,7 @@
 
 ```bash
 # 1. Fork the repository on GitHub
-# Visit: https://github.com/PhantomDave/ProxmoxVE
+# Visit: https://github.com/community-scripts/ProxmoxVE
 # Click: Fork (top right)
 
 # 2. Clone your fork
@@ -174,7 +174,7 @@ Examples:
 
 ```bash
 # 1. Fork on GitHub (one-time)
-# Visit: https://github.com/PhantomDave/ProxmoxVE
+# Visit: https://github.com/community-scripts/ProxmoxVE
 # Click: Fork
 
 # 2. Clone your fork
@@ -182,7 +182,7 @@ git clone https://github.com/YOUR_USERNAME/ProxmoxVE.git
 cd ProxmoxVE
 
 # 3. Add upstream remote for updates
-git remote add upstream https://github.com/PhantomDave/ProxmoxVE.git
+git remote add upstream https://github.com/community-scripts/ProxmoxVE.git
 
 # 4. Create feature branch
 git checkout -b feat/add-myapp
@@ -330,7 +330,7 @@ echo -e "${TAB}${GATEWAY}${BGN}http://${IP}:PORT${CL}"
 
 ```bash
 #!/usr/bin/env bash
-# Copyright (c) 2021-2026 PhantomDave ORG
+# Copyright (c) 2021-2026 community-scripts ORG
 # Author: YourUsername
 # License: MIT
 # Source: https://github.com/example/myapp
@@ -558,10 +558,10 @@ fi
 
 ```bash
 #!/usr/bin/env bash
-# Copyright (c) 2021-2026 PhantomDave ORG
+# Copyright (c) 2021-2026 community-scripts ORG
 # Author: YourUsername
 # Co-Author: AnotherAuthor (for collaborative work)
-# License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/app/repo
 # Description: Brief description of what this script does
 ```
@@ -663,7 +663,7 @@ curl -O https://raw.githubusercontent.com/YOUR_USER/ProxmoxVE/feat/myapp/ct/myap
 chmod +x myapp.sh
 
 # 4. UPDATE URLS IN SCRIPT to point to your fork
-sed -i 's|PhantomDave|YOUR_USER|g' myapp.sh
+sed -i 's|community-scripts|YOUR_USER|g' myapp.sh
 
 # 5. Run script
 bash myapp.sh
@@ -689,7 +689,7 @@ pct exec 100 bash
 # When prompted: Select "2" for Advanced
 
 # Test 2: User Defaults
-# Before running: Create ~/.PhantomDave/default.vars
+# Before running: Create ~/.community-scripts/default.vars
 # When prompted: Select "3" for User Defaults
 
 # Test 3: Error handling
@@ -762,11 +762,11 @@ git push origin feat/add-myapp --force-with-lease
 
 ### Step 3: Create Pull Request on GitHub
 
-**Visit**: https://github.com/PhantomDave/ProxmoxVE/pulls
+**Visit**: https://github.com/community-scripts/ProxmoxVE/pulls
 
 **Click**: "New Pull Request"
 
-**Select**: `PhantomDave:main` ← `YOUR_USERNAME:feat/myapp`
+**Select**: `community-scripts:main` ← `YOUR_USERNAME:feat/myapp`
 
 ### Step 4: Fill PR Description
 
@@ -982,8 +982,8 @@ echo "Edit /opt/myapp/config.json to customize settings"
 - **Documentation**: `/docs` directory and wikis
 - **Function Reference**: `/misc/*.md` wiki files
 - **Examples**: Look at similar applications in `/ct` and `/install`
-- **GitHub Issues**: https://github.com/PhantomDave/ProxmoxVE/issues
-- **Discussions**: https://github.com/PhantomDave/ProxmoxVE/discussions
+- **GitHub Issues**: https://github.com/community-scripts/ProxmoxVE/issues
+- **Discussions**: https://github.com/community-scripts/ProxmoxVE/discussions
 
 ### Ask Questions
 

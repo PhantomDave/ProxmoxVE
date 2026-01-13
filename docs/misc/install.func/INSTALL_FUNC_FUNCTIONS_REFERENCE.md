@@ -234,4 +234,4 @@ update_os
 
 **Last Updated**: December 2025
 **Total Functions**: 7
-**Maintained by**: PhantomDave team
+**Maintained by**: community-scripts team

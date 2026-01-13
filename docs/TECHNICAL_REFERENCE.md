@@ -67,11 +67,11 @@
 ┌─────────────────────────────────────────────────────────────┐
 │           Configuration Files (on Disk)                      │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │  /usr/local/PhantomDave/default.vars          │   │
+│  │  /usr/local/community-scripts/default.vars          │   │
 │  │  (User global defaults)                             │   │
 │  └──────────────────────────────────────────────────────┘   │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │  /usr/local/PhantomDave/defaults/*.vars       │   │
+│  │  /usr/local/community-scripts/defaults/*.vars       │   │
 │  │  (App-specific defaults)                            │   │
 │  └──────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
@@ -83,7 +83,7 @@
 
 ### User Defaults: `default.vars`
 
-**Location**: `/usr/local/PhantomDave/default.vars`
+**Location**: `/usr/local/community-scripts/default.vars`
 
 **MIME Type**: `text/plain`
 
@@ -164,7 +164,7 @@ var_unprivileged=1
 
 ### App Defaults: `<app>.vars`
 
-**Location**: `/usr/local/PhantomDave/defaults/<appname>.vars`
+**Location**: `/usr/local/community-scripts/defaults/<appname>.vars`
 
 **Format**: Identical to `default.vars`
 
@@ -215,7 +215,7 @@ load_vars_file(filepath)
 
 | Param    | Type   | Required | Example                                     |
 | -------- | ------ | -------- | ------------------------------------------- |
-| filepath | String | Yes      | `/usr/local/PhantomDave/default.vars` |
+| filepath | String | Yes      | `/usr/local/community-scripts/default.vars` |
 
 **Returns**:
 
@@ -260,7 +260,7 @@ load_vars_file() {
 
 ```bash
 # Load user defaults
-load_vars_file "/usr/local/PhantomDave/default.vars"
+load_vars_file "/usr/local/community-scripts/default.vars"
 
 # Load app-specific defaults
 load_vars_file "$(get_app_defaults_path)"
@@ -300,7 +300,7 @@ get_app_defaults_path()
 ```bash
 get_app_defaults_path() {
   local n="${NSAPP:-${APP,,}}"
-  echo "/usr/local/PhantomDave/defaults/${n}.vars"
+  echo "/usr/local/community-scripts/defaults/${n}.vars"
 }
 ```
 
@@ -343,7 +343,7 @@ default_var_settings()
 
 ```
 1. Find default.vars location
-   (usually /usr/local/PhantomDave/default.vars)
+   (usually /usr/local/community-scripts/default.vars)
 
 2. Create if missing
 
@@ -410,7 +410,7 @@ maybe_offer_save_app_defaults()
 1. After advanced installation completes
 2. Offers user: "Save as App Defaults for <APP>?"
 3. If yes:
-   - Saves to `/usr/local/PhantomDave/defaults/<app>.vars`
+   - Saves to `/usr/local/community-scripts/defaults/<app>.vars`
    - Only whitelisted variables included
    - Previous defaults backed up (if exists)
 4. If no:
@@ -569,12 +569,12 @@ Step 1: Read ENVIRONMENT VARIABLES
    └─ ...all var_* variables
 
 Step 2: Load APP-SPECIFIC DEFAULTS
-   ├─ Check if /usr/local/PhantomDave/defaults/pihole.vars exists
+   ├─ Check if /usr/local/community-scripts/defaults/pihole.vars exists
    ├─ Load all var_* from that file
    └─ These override built-ins but NOT environment variables
 
 Step 3: Load USER GLOBAL DEFAULTS
-   ├─ Check if /usr/local/PhantomDave/default.vars exists
+   ├─ Check if /usr/local/community-scripts/default.vars exists
    ├─ Load all var_* from that file
    └─ These override built-ins but NOT app-specific
 
@@ -633,8 +633,8 @@ base_settings() {
   fi
 
   # Priority 3: Load user defaults
-  if [ -f "/usr/local/PhantomDave/default.vars" ]; then
-    load_vars_file "/usr/local/PhantomDave/default.vars"
+  if [ -f "/usr/local/community-scripts/default.vars" ]; then
+    load_vars_file "/usr/local/community-scripts/default.vars"
   fi
 
   # Priority 4: Apply built-in defaults (lowest)
@@ -754,7 +754,7 @@ CONTAINER CREATION STARTED
 | **Arbitrary Code Execution** | No `source` or `eval`; manual parsing only        |
 | **Variable Injection**       | Whitelist of allowed variable names               |
 | **Command Substitution**     | `_sanitize_value()` blocks `$()`, backticks, etc. |
-| **Path Traversal**           | Files locked to `/usr/local/PhantomDave/`   |
+| **Path Traversal**           | Files locked to `/usr/local/community-scripts/`   |
 | **Permission Escalation**    | Files created with restricted permissions         |
 | **Information Disclosure**   | Sensitive variables not logged                    |
 

@@ -164,8 +164,8 @@
 │  │                    DEFAULT_VAR_SETTINGS()                                  │ │
 │  │                                                                           │ │
 │  │  • Offer to save current settings as defaults                             │ │
-│  │  • Save to /usr/local/PhantomDave/default.vars                     │ │
-│  │  • Save to /usr/local/PhantomDave/defaults/<app>.vars               │ │
+│  │  • Save to /usr/local/community-scripts/default.vars                     │ │
+│  │  • Save to /usr/local/community-scripts/defaults/<app>.vars               │ │
 │  └─────────────────────────────────────────────────────────────────────────────┘ │
 └─────────────────────┬───────────────────────────────────────────────────────────┘
                       │
@@ -219,8 +219,8 @@ GPU Passthrough Flow:
 ```
 Variable Resolution Order:
 1. Hard environment variables (captured at start)
-2. App-specific .vars file (/usr/local/PhantomDave/defaults/<app>.vars)
-3. Global default.vars file (/usr/local/PhantomDave/default.vars)
+2. App-specific .vars file (/usr/local/community-scripts/defaults/<app>.vars)
+3. Global default.vars file (/usr/local/community-scripts/default.vars)
 4. Built-in defaults in base_settings() function
 ```
 

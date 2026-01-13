@@ -488,4 +488,4 @@ setup_nodejs "20"
 
 **Last Updated**: December 2025
 **Total Functions**: 30+
-**Maintained by**: PhantomDave team
+**Maintained by**: community-scripts team

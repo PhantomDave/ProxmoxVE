@@ -1,6 +1,6 @@
 # Configuration & Deployment Guides
 
-This directory contains comprehensive guides for configuring and deploying Proxmox VE containers using PhantomDave.
+This directory contains comprehensive guides for configuring and deploying Proxmox VE containers using community-scripts.
 
 ## 📚 Available Guides
 

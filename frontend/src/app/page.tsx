@@ -88,7 +88,7 @@ export default function Page() {
                   </Button>
                   <Button className="w-full" asChild>
                     <a
-                      href={`https://github.com/PhantomDave/${basePath}`}
+                      href={`https://github.com/community-scripts/${basePath}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center"

@@ -39,27 +39,27 @@ Before contributing, please ensure that you have the following setup:
 
 ### Important Notes
 
-- Use [AppName.sh](https://github.com/PhantomDave/ProxmoxVE/blob/main/docs/contribution/templates_ct/AppName.sh) and [AppName-install.sh](https://github.com/PhantomDave/ProxmoxVE/blob/main/docs/contribution/templates_install/AppName-install.sh) as templates when creating new scripts.
+- Use [AppName.sh](https://github.com/community-scripts/ProxmoxVE/blob/main/docs/contribution/templates_ct/AppName.sh) and [AppName-install.sh](https://github.com/community-scripts/ProxmoxVE/blob/main/docs/contribution/templates_install/AppName-install.sh) as templates when creating new scripts.
 
 ---
 
 # 🚀 The Application Script (ct/AppName.sh)
 
-- You can find all coding standards, as well as the structure for this file [here](https://github.com/PhantomDave/ProxmoxVE/blob/main/docs/contribution/templates_ct/AppName.md).
+- You can find all coding standards, as well as the structure for this file [here](https://github.com/community-scripts/ProxmoxVE/blob/main/docs/contribution/templates_ct/AppName.md).
 - These scripts are responsible for container creation, setting the necessary variables and handling the update of the application once installed.
 
 ---
 
 # 🛠 The Installation Script (install/AppName-install.sh)
 
-- You can find all coding standards, as well as the structure for this file [here](https://github.com/PhantomDave/ProxmoxVE/blob/main/docs/contribution/templates_install/AppName-install.md).
+- You can find all coding standards, as well as the structure for this file [here](https://github.com/community-scripts/ProxmoxVE/blob/main/docs/contribution/templates_install/AppName-install.md).
 - These scripts are responsible for the installation of the application.
 
 ---
 
 ## 🚀 Building Your Own Scripts
 
-Start with the [template script](https://github.com/PhantomDave/ProxmoxVE/blob/main/docs/contribution/templates_install/AppName-install.sh)
+Start with the [template script](https://github.com/community-scripts/ProxmoxVE/blob/main/docs/contribution/templates_install/AppName-install.sh)
 
 ---
 
@@ -83,7 +83,7 @@ git switch -c your-feature-branch
 
 ### 4. Change paths in build.func install.func and AppName.sh
 
-To be able to develop from your own branch you need to change `https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main` to `https://raw.githubusercontent.com/[USER]/[REPOSITORY]/refs/heads/[BRANCH]`. You need to make this change atleast in misc/build.func misc/install.func and in your ct/AppName.sh. This change is only for testing. Before opening a Pull Request you should change this line change all this back to point to `https://raw.githubusercontent.com/PhantomDave/ProxmoxVE/main`.
+To be able to develop from your own branch you need to change `https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main` to `https://raw.githubusercontent.com/[USER]/[REPOSITORY]/refs/heads/[BRANCH]`. You need to make this change atleast in misc/build.func misc/install.func and in your ct/AppName.sh. This change is only for testing. Before opening a Pull Request you should change this line change all this back to point to `https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main`.
 
 ### 4. Commit changes (without build.func and install.func!)
 
@@ -105,6 +105,6 @@ Open a Pull Request from your feature branch to the main repository branch. You 
 
 ## 📚 Pages
 
-- [CT Template: AppName.sh](https://github.com/PhantomDave/ProxmoxVE/blob/main/docs/contribution/templates_ct/AppName.sh)
-- [Install Template: AppName-install.sh](https://github.com/PhantomDave/ProxmoxVE/blob/main/docs/contribution/templates_install/AppName-install.sh)
-- [JSON Template: AppName.json](https://github.com/PhantomDave/ProxmoxVE/blob/main/docs/contribution/templates_json/AppName.json)
+- [CT Template: AppName.sh](https://github.com/community-scripts/ProxmoxVE/blob/main/docs/contribution/templates_ct/AppName.sh)
+- [Install Template: AppName-install.sh](https://github.com/community-scripts/ProxmoxVE/blob/main/docs/contribution/templates_install/AppName-install.sh)
+- [JSON Template: AppName.json](https://github.com/community-scripts/ProxmoxVE/blob/main/docs/contribution/templates_json/AppName.json)

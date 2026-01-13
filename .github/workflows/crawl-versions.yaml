@@ -12,14 +12,14 @@ permissions:
 
 jobs:
   crawl-versions:
-    if: github.repository == 'PhantomDave/ProxmoxVE'
+    if: github.repository == 'community-scripts/ProxmoxVE'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          repository: PhantomDave/ProxmoxVE
+          repository: community-scripts/ProxmoxVE
           ref: main
 
       - name: Generate a token

@@ -1,6 +1,6 @@
-// Copyright (c) 2021-2026 PhantomDave ORG
+// Copyright (c) 2021-2026 community-scripts ORG
 // Author: Michel Roegl-Brunner (michelroegl-brunner)
-// License: MIT | https://github.com/PhantomDave/ProxmoxVE/raw/main/LICENSE
+// License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 
 package main
 

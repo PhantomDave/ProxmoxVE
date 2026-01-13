@@ -21,7 +21,7 @@ Complete guide to contributing to the ProxmoxVE project - from your first fork t
 
 ```bash
 # 1. Fork on GitHub
-# Visit: https://github.com/PhantomDave/ProxmoxVE → Fork (top right)
+# Visit: https://github.com/community-scripts/ProxmoxVE → Fork (top right)
 
 # 2. Clone your fork
 git clone https://github.com/YOUR_USERNAME/ProxmoxVE.git
@@ -82,7 +82,7 @@ git config user.name "Your Name"
 git config user.email "your.email@example.com"
 
 # Add upstream remote for syncing
-git remote add upstream https://github.com/PhantomDave/ProxmoxVE.git
+git remote add upstream https://github.com/community-scripts/ProxmoxVE.git
 
 # Verify remotes
 git remote -v
@@ -298,7 +298,7 @@ bash docs/contribution/setup-fork.sh
 
 - **GitHub Issues**: For bugs and feature requests
 - **GitHub Discussions**: For general questions
-- **Discord**: PhantomDave server
+- **Discord**: community-scripts server
 
 ---
 
@@ -345,9 +345,9 @@ bash docs/contribution/setup-fork.sh
 
 ## 📞 Contact & Support
 
-- **GitHub**: https://github.com/PhantomDave/ProxmoxVE
-- **Issues**: https://github.com/PhantomDave/ProxmoxVE/issues
-- **Discussions**: https://github.com/PhantomDave/ProxmoxVE/discussions
+- **GitHub**: https://github.com/community-scripts/ProxmoxVE
+- **Issues**: https://github.com/community-scripts/ProxmoxVE/issues
+- **Discussions**: https://github.com/community-scripts/ProxmoxVE/discussions
 - **Discord**: [Join Server](https://discord.gg/UHrpNWGwkH)
 
 ---

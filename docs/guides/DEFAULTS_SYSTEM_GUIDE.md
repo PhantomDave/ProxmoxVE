@@ -59,7 +59,7 @@ Example: PiHole uses 2 CPU cores by default
 ```
 Your personal global defaults
 Applied to ALL container installations
-Location: /usr/local/PhantomDave/default.vars
+Location: /usr/local/community-scripts/default.vars
 Example: "I always want 4 CPU cores and 2GB RAM"
 ```
 
@@ -67,7 +67,7 @@ Example: "I always want 4 CPU cores and 2GB RAM"
 ```
 Application-specific saved settings
 Only applied when installing that specific app
-Location: /usr/local/PhantomDave/defaults/<appname>.vars
+Location: /usr/local/community-scripts/defaults/<appname>.vars
 Example: "Whenever I install PiHole, use these exact settings"
 ```
 
@@ -149,7 +149,7 @@ Use your saved global defaults
 ├─ Best for: Consistent deployments across many containers
 ├─ Requires: You've previously saved User Defaults
 ├─ What happens:
-│  1. Loads settings from: /usr/local/PhantomDave/default.vars
+│  1. Loads settings from: /usr/local/community-scripts/default.vars
 │  2. Shows you the loaded settings
 │  3. Creates container immediately
 └─ Time: ~2 minutes
@@ -166,7 +166,7 @@ Use previously saved app-specific defaults
 ├─ Best for: Repeating the same configuration multiple times
 ├─ Requires: You've previously saved App Defaults for this app
 ├─ What happens:
-│  1. Loads settings from: /usr/local/PhantomDave/defaults/<app>.vars
+│  1. Loads settings from: /usr/local/community-scripts/defaults/<app>.vars
 │  2. Shows you the loaded settings
 │  3. Creates container immediately
 └─ Time: ~2 minutes
@@ -236,7 +236,7 @@ bash pihole-install.sh
 #    Select: Yes
 
 # 6. Done! Settings saved to:
-#    /usr/local/PhantomDave/defaults/pihole.vars
+#    /usr/local/community-scripts/defaults/pihole.vars
 ```
 
 #### Step-by-Step: Create User Defaults
@@ -247,7 +247,7 @@ bash pihole-install.sh
 # FIRST app you run with this selection will offer
 # to save as "User Defaults" additionally
 
-# This saves to: /usr/local/PhantomDave/default.vars
+# This saves to: /usr/local/community-scripts/default.vars
 ```
 
 ---
@@ -258,7 +258,7 @@ For advanced users who want to create defaults without running installation:
 
 ```bash
 # Create User Defaults manually
-sudo tee /usr/local/PhantomDave/default.vars > /dev/null << 'EOF'
+sudo tee /usr/local/community-scripts/default.vars > /dev/null << 'EOF'
 # Global User Defaults
 var_cpu=4
 var_ram=2048
@@ -273,7 +273,7 @@ var_template_storage=local
 EOF
 
 # Create App Defaults manually
-sudo tee /usr/local/PhantomDave/defaults/pihole.vars > /dev/null << 'EOF'
+sudo tee /usr/local/community-scripts/defaults/pihole.vars > /dev/null << 'EOF'
 # App-specific defaults for PiHole
 var_unprivileged=1
 var_cpu=2
@@ -358,29 +358,29 @@ bash pihole-install.sh
 
 #### View User Defaults
 ```bash
-cat /usr/local/PhantomDave/default.vars
+cat /usr/local/community-scripts/default.vars
 ```
 
 #### View App Defaults
 ```bash
-cat /usr/local/PhantomDave/defaults/pihole.vars
+cat /usr/local/community-scripts/defaults/pihole.vars
 ```
 
 #### List All Saved App Defaults
 ```bash
-ls -la /usr/local/PhantomDave/defaults/
+ls -la /usr/local/community-scripts/defaults/
 ```
 
 ### Edit Your Settings
 
 #### Edit User Defaults
 ```bash
-sudo nano /usr/local/PhantomDave/default.vars
+sudo nano /usr/local/community-scripts/default.vars
 ```
 
 #### Edit App Defaults
 ```bash
-sudo nano /usr/local/PhantomDave/defaults/pihole.vars
+sudo nano /usr/local/community-scripts/defaults/pihole.vars
 ```
 
 ### Update Existing Defaults
@@ -402,17 +402,17 @@ bash pihole-install.sh
 
 #### Delete User Defaults
 ```bash
-sudo rm /usr/local/PhantomDave/default.vars
+sudo rm /usr/local/community-scripts/default.vars
 ```
 
 #### Delete App Defaults
 ```bash
-sudo rm /usr/local/PhantomDave/defaults/pihole.vars
+sudo rm /usr/local/community-scripts/defaults/pihole.vars
 ```
 
 #### Delete All App Defaults
 ```bash
-sudo rm /usr/local/PhantomDave/defaults/*
+sudo rm /usr/local/community-scripts/defaults/*
 ```
 
 ---
@@ -545,11 +545,11 @@ var_tags=iot,monitoring
 **Checklist**:
 ```bash
 # 1. Verify files exist
-ls -la /usr/local/PhantomDave/default.vars
-ls -la /usr/local/PhantomDave/defaults/<app>.vars
+ls -la /usr/local/community-scripts/default.vars
+ls -la /usr/local/community-scripts/defaults/<app>.vars
 
 # 2. Check file permissions (should be readable)
-stat /usr/local/PhantomDave/default.vars
+stat /usr/local/community-scripts/default.vars
 
 # 3. Verify correct mode selected
 #    (Make sure you selected "User Defaults" or "App Defaults")
@@ -569,11 +569,11 @@ env | grep var_
 **Solution**:
 ```bash
 # Create the defaults directory if missing
-sudo mkdir -p /usr/local/PhantomDave/defaults
+sudo mkdir -p /usr/local/community-scripts/defaults
 
 # Fix permissions
-sudo chmod 755 /usr/local/PhantomDave
-sudo chmod 755 /usr/local/PhantomDave/defaults
+sudo chmod 755 /usr/local/community-scripts
+sudo chmod 755 /usr/local/community-scripts/defaults
 
 # Make sure you're running as root
 sudo bash pihole-install.sh
@@ -588,10 +588,10 @@ sudo bash pihole-install.sh
 **Solution**:
 ```bash
 # Create the directory
-sudo mkdir -p /usr/local/PhantomDave/defaults
+sudo mkdir -p /usr/local/community-scripts/defaults
 
 # Verify
-ls -la /usr/local/PhantomDave/
+ls -la /usr/local/community-scripts/
 ```
 
 ---
@@ -609,8 +609,8 @@ env | grep var_
 # Clear them: unset var_cpu var_ram (etc)
 
 # 2. Verify correct defaults are in files
-cat /usr/local/PhantomDave/default.vars
-cat /usr/local/PhantomDave/defaults/pihole.vars
+cat /usr/local/community-scripts/default.vars
+cat /usr/local/community-scripts/defaults/pihole.vars
 
 # 3. Check which mode you actually selected
 # (Script output shows which defaults were applied)
@@ -672,9 +672,9 @@ Allowed variables (starting with var_):
 
 | Type | Location | Example |
 |------|----------|---------|
-| User Defaults | `/usr/local/PhantomDave/default.vars` | Global settings |
-| App Defaults | `/usr/local/PhantomDave/defaults/<app>.vars` | PiHole-specific |
-| Backup Dir | `/usr/local/PhantomDave/defaults/` | All app defaults |
+| User Defaults | `/usr/local/community-scripts/default.vars` | Global settings |
+| App Defaults | `/usr/local/community-scripts/defaults/<app>.vars` | PiHole-specific |
+| Backup Dir | `/usr/local/community-scripts/defaults/` | All app defaults |
 
 ### File Format
 
@@ -699,23 +699,23 @@ var_name=value
 
 ```bash
 # View defaults
-cat /usr/local/PhantomDave/default.vars
+cat /usr/local/community-scripts/default.vars
 
 # Edit defaults
-sudo nano /usr/local/PhantomDave/default.vars
+sudo nano /usr/local/community-scripts/default.vars
 
 # List all app defaults
-ls /usr/local/PhantomDave/defaults/
+ls /usr/local/community-scripts/defaults/
 
 # Backup your defaults
-cp -r /usr/local/PhantomDave/defaults/ ~/defaults-backup/
+cp -r /usr/local/community-scripts/defaults/ ~/defaults-backup/
 
 # Set temporary override
 export var_cpu=8
 bash pihole-install.sh
 
 # Create custom defaults
-sudo tee /usr/local/PhantomDave/defaults/custom.vars << 'EOF'
+sudo tee /usr/local/community-scripts/defaults/custom.vars << 'EOF'
 var_cpu=4
 var_ram=2048
 EOF
@@ -728,8 +728,8 @@ EOF
 ### Need More Information?
 
 - 📖 [Main Documentation](../../docs/)
-- 🐛 [Report Issues](https://github.com/PhantomDave/ProxmoxVE/issues)
-- 💬 [Discussions](https://github.com/PhantomDave/ProxmoxVE/discussions)
+- 🐛 [Report Issues](https://github.com/community-scripts/ProxmoxVE/issues)
+- 💬 [Discussions](https://github.com/community-scripts/ProxmoxVE/discussions)
 
 ### Useful Commands
 
@@ -738,7 +738,7 @@ EOF
 grep "var_" /path/to/app-install.sh | head -20
 
 # Verify defaults syntax
-cat /usr/local/PhantomDave/default.vars
+cat /usr/local/community-scripts/default.vars
 
 # Monitor installation with defaults
 bash pihole-install.sh 2>&1 | tee installation.log

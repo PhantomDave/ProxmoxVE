@@ -11,7 +11,7 @@
 
 
 # Set default reviewers
-*                                                                           @PhantomDave/Contributor
+*                                                                           @community-scripts/Contributor
 
 # All changes in frontend
-/frontend/                                                                  @PhantomDave/Frontend-Dev
+/frontend/                                                                  @community-scripts/Frontend-Dev

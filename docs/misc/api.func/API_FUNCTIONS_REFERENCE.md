@@ -41,7 +41,7 @@ get_error_description 255   # "Unknown critical error, often due to missing perm
 ### API Communication Functions
 
 #### `post_to_api()`
-**Purpose**: Send LXC container installation data to PhantomDave.org API
+**Purpose**: Send LXC container installation data to community-scripts.org API
 **Parameters**: None (uses environment variables)
 **Returns**: None
 **Side Effects**:
@@ -56,7 +56,7 @@ get_error_description 255   # "Unknown critical error, often due to missing perm
 - `DIAGNOSTICS` must be set to "yes"
 - `RANDOM_UUID` must be set and not empty
 
-**API Endpoint**: `http://api.PhantomDave.org/dev/upload`
+**API Endpoint**: `http://api.community-scripts.org/dev/upload`
 
 **JSON Payload Structure**:
 ```json
@@ -94,7 +94,7 @@ post_to_api
 ```
 
 #### `post_to_api_vm()`
-**Purpose**: Send VM installation data to PhantomDave.org API
+**Purpose**: Send VM installation data to community-scripts.org API
 **Parameters**: None (uses environment variables)
 **Returns**: None
 **Side Effects**:
@@ -105,12 +105,12 @@ post_to_api
 **Environment Variables Used**: `DIAGNOSTICS`, `RANDOM_UUID`, `DISK_SIZE`, `CORE_COUNT`, `RAM_SIZE`, `var_os`, `var_version`, `NSAPP`, `METHOD`
 
 **Prerequisites**:
-- `/usr/local/PhantomDave/diagnostics` file must exist
+- `/usr/local/community-scripts/diagnostics` file must exist
 - `DIAGNOSTICS` must be set to "yes" in diagnostics file
 - `curl` command must be available
 - `RANDOM_UUID` must be set and not empty
 
-**API Endpoint**: `http://api.PhantomDave.org/dev/upload`
+**API Endpoint**: `http://api.community-scripts.org/dev/upload`
 
 **JSON Payload Structure**:
 ```json
@@ -134,7 +134,7 @@ post_to_api
 **Usage Example**:
 ```bash
 # Create diagnostics file
-echo "DIAGNOSTICS=yes" > /usr/local/PhantomDave/diagnostics
+echo "DIAGNOSTICS=yes" > /usr/local/community-scripts/diagnostics
 
 export RANDOM_UUID="$(uuidgen)"
 export DISK_SIZE="8G"
@@ -149,7 +149,7 @@ post_to_api_vm
 ```
 
 #### `post_update_to_api()`
-**Purpose**: Send installation completion status to PhantomDave.org API
+**Purpose**: Send installation completion status to community-scripts.org API
 **Parameters**:
 - `$1` - Status ("success" or "failed", default: "failed")
 - `$2` - Exit code (default: 1)
@@ -167,7 +167,7 @@ post_to_api_vm
 - `RANDOM_UUID` must be set and not empty
 - POST_UPDATE_DONE must be false (prevents duplicates)
 
-**API Endpoint**: `http://api.PhantomDave.org/dev/upload/updatestatus`
+**API Endpoint**: `http://api.community-scripts.org/dev/upload/updatestatus`
 
 **JSON Payload Structure**:
 ```json
