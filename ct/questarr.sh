@@ -33,34 +33,30 @@ function update_script() {
     NODE_VERSION="20" setup_nodejs
   fi
 
-  if check_for_gh_release "Questarr" "Doezer/Questarr"; then
-    msg_info "Stopping Service"
-    systemctl stop questarr
-    msg_ok "Stopped Service"
+  msg_info "Stopping Service"
+  systemctl stop questarr
+  msg_ok "Stopped Service"
 
-    msg_info "Backing up data"
-    cp /opt/questarr/.env /opt/.env.backup
-    msg_ok "Data backed up"
+  msg_info "Backing up data"
+  cp /opt/questarr/.env /opt/.env.backup
+  msg_ok "Data backed up"
 
-    msg_info "Updating ${APP}"
-    cd /opt/questarr
-    git fetch origin
-    LATEST_TAG=$(git describe --tags "$(git rev-list --tags --max-count=1)")
-    git checkout "$LATEST_TAG"
-    $STD npm ci --omit=dev
-    $STD npm run build
-    mv /opt/.env.backup /opt/questarr/.env
-    msg_ok "Updated ${APP} to ${LATEST_TAG}"
+  msg_info "Updating ${APP}"
+  cd /opt/questarr
+  $STD git pull origin main
+  $STD npm ci --omit=dev
+  $STD npm run build
+  mv /opt/.env.backup /opt/questarr/.env
+  msg_ok "Updated ${APP}"
 
-    msg_info "Running Database Migrations"
-    $STD npm run db:migrate
-    msg_ok "Database Migrations Complete"
+  msg_info "Running Database Migrations"
+  $STD npm run db:migrate
+  msg_ok "Database Migrations Complete"
 
-    msg_info "Starting Service"
-    systemctl start questarr
-    msg_ok "Started Service"
-    msg_ok "Updated successfully!"
-  fi
+  msg_info "Starting Service"
+  systemctl start questarr
+  msg_ok "Started Service"
+  msg_ok "Updated successfully!"
   exit
 }
 

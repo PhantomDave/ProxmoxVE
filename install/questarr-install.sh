@@ -28,10 +28,9 @@ import_local_ip
 
 msg_info "Cloning Questarr Repository"
 cd /opt
-RELEASE=$(get_latest_github_release "Doezer/Questarr")
-$STD git clone --depth 1 --branch "$RELEASE" https://github.com/Doezer/Questarr.git questarr
+$STD git clone --depth 1 https://github.com/Doezer/Questarr.git questarr
 cd questarr
-msg_ok "Cloned Questarr ${RELEASE}"
+msg_ok "Cloned Questarr"
 
 msg_info "Installing Questarr Dependencies"
 $STD npm ci
